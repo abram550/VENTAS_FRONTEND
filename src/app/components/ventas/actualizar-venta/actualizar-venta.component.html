@@ -1,0 +1,82 @@
+<p-card header="Actualizar Venta" [style]="{ width: '100%' }">
+    <ng-template pTemplate="header">
+        <!-- Aquí puedes agregar contenido adicional en el encabezado si es necesario -->
+    </ng-template>
+    <div>
+        <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()" class="p-3 bg-faded">
+            <div class="grid">
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
+                        <input class="w-12" type="date" pInputText formControlName="fechaVenta" placeholder="Fecha de Venta" title="Fecha de Venta">         
+                    </div>
+                </div>
+
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-money-bill"></i></span>
+                        <input class="w-12" type="number" pInputText formControlName="subtotal" placeholder="Subtotal" title="Subtotal">          
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-money-bill"></i></span>
+                        <input class="w-12" type="number" pInputText formControlName="impuestos" placeholder="Impuestos" title="Impuestos">         
+                    </div>
+                </div>
+
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-percent"></i></span>
+                        <input class="w-12" type="number" pInputText formControlName="descuentos" placeholder="Descuentos" title="Descuentos">          
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-money-bill"></i></span>
+                        <input class="w-12" type="number" pInputText formControlName="total" placeholder="Total" title="Total">          
+                    </div>
+                </div>
+
+                <div class="col-12 sm:col-6">
+                    <div class="p-inputgroup mb-1">
+                        <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+                        <input class="w-12" type="number" pInputText formControlName="clientes_id" placeholder="ID Cliente" title="ID Cliente">          
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-content-center flex-wrap">
+                <button 
+                    pButton 
+                    pRipple
+                    label="Guardar"
+                    icon="pi pi-save"
+                    severity="info"
+                    class="mr-4"
+                    type="submit"
+                ></button>
+
+                <button 
+                    pButton 
+                    pRipple
+                    label="Cancelar"
+                    icon="pi pi-times-circle"
+                    severity="warning"
+                    class="mr-4"
+                    type="button"
+                    (click)="cancel()"
+                ></button>
+            </div>
+        </form> 
+    </div>
+    <ng-template pTemplate="footer">
+        <!-- Aquí puedes agregar contenido adicional en el pie de página si es necesario -->
+    </ng-template>
+</p-card>

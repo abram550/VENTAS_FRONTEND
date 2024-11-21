@@ -1,0 +1,69 @@
+<p-card class="w-12 h-full">
+    <ng-template pTemplate="header">
+        <div class="flex justify-content-between flex-wrap">
+            <h3 class="ml-4">
+                Registro de Productos
+            </h3>
+            <div class="mt-2 mr-2">
+                <a 
+                  pButton 
+                  pRipple
+                  label="Crear Producto" 
+                  icon="pi pi-plus"
+                  class="bg-cyan-600"
+                  [routerLink]="['/productos/nuevo']">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+
+    <p>
+        <p-table [value]="producto">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Precio</th>
+                    <th>Stock Mínimo</th>
+                    <th>Cantidad</th>
+                    <th>Tipo Productos</th>
+                    <th class="flex justify-content-center flex-wrap">Acciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-productos>
+                <tr>
+                    <td>{{ productos.nombre }}</td>
+                    <td>{{ productos.marca }}</td>
+                    <td>{{ productos.precio }}</td>
+                    <td>{{ productos.stockMin }}</td>
+                    <td>{{ productos.cantidad }}</td>
+                    <td>{{ productos.Tipoproductoid }}</td>
+                    <td>
+                        <button 
+                            pButton 
+                            pRipple
+                            icon="pi pi-print"
+                            class="bg-cyan-600 mr-1">
+                        </button>
+                        <a 
+                            pButton 
+                            pRipple
+                            icon="pi pi-sync"
+                            severity="warning"
+                            class="mr-1"
+                            [routerLink]="['/productos/edit', productos.id]">
+                        </a>
+                        <button 
+                            pButton 
+                            pRipple
+                            severity="danger"
+                            icon="pi pi-eraser"
+                            class="mr-1"
+                            (click)="eliminar(productos.id)">
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p>
+</p-card>

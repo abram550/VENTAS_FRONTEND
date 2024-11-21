@@ -1,0 +1,52 @@
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header header"
+        "aside section section section section"
+        "footer footer footer footer footer";
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-rows: 20% 70% 10%;
+    height: 98vh;
+    margin: 0; /* Eliminar margenes externos */
+    padding: 0; /* Eliminar padding externo */
+}
+
+header {
+    grid-area: header;
+    border: 1px solid royalblue;
+    padding: 10px; /* Espaciado interno */
+}
+
+aside {
+    grid-area: aside;
+    border: 1px solid royalblue;
+    padding: 10px; /* Espaciado interno */
+}
+
+section {
+    grid-area: section;
+    border: 1px solid royalblue;
+    padding: 10px; /* Espaciado interno */
+    overflow: auto; /* Para manejar el desbordamiento de contenido */
+}
+
+.recuadros {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 20px;
+    margin: 0; /* Eliminar margen exterior */
+    padding: 0 5px; /* Espaciado interno lateral */
+}
+
+.elemento {
+    width: 25%;
+}
+
+footer {
+    grid-area: footer;
+    border: 1px solid royalblue;
+    padding: 10px; /* Espaciado interno */
+}
